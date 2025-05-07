@@ -20,6 +20,11 @@ jobs:
       contents: read #This is required for actions/checkout
 
     steps:
+      - name: 'Show env'
+        run: |
+          export MONGODB_URI=${{ secrets.MONGODB_URI }}
+          export JWT_SECRET=${{secrets.JWT_SECRET}}
+        
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v4
 
